@@ -301,12 +301,11 @@ public class Actividad6 {
 		int fb = -1;
 		if (nb == 1)
 			fb = 0;
-		else if (nb == 2)
+		else if (nb == 2) {
 			fb = 1;
-		else if (nb > 2)
+			fibonacci(nb - 1);
+		} else if (nb > 2)
 			fb = fibonacci(nb - 1) + fibonacci(nb - 2);
-		if (fb == 1)
-			System.out.println(0);
 		if (fb == -1)
 			System.out.println("Error: Número no válido");
 		else
