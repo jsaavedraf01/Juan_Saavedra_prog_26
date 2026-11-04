@@ -288,7 +288,6 @@ public class Actividad6 {
 			if (i < b && b % i == 0)
 				bDivSum += i;
 		}
-		System.out.println(aDivSum + " y " + bDivSum);
 		if (a == b)
 			System.out.println("Ambos son el mismo número");
 		else if (aDivSum == b && bDivSum == a)
@@ -331,6 +330,105 @@ public class Actividad6 {
 		// fibonacci(nb);
 	}
 
+	public static int menu() {
+		int option;
+		System.out.println("Introduzca una opción del menú");
+		System.out.println("1. Sumar");
+		System.out.println("2. Restar");
+		System.out.println("3. Multiplicar");
+		System.out.println("4. Dividir");
+		System.out.println("5. Es primo");
+		System.out.println("6. Salir");
+		option = sc.nextInt();
+		while (option < 1 || option > 6) {
+			System.out.println("Opción no válida. Introduzca una opción válida");
+			option = sc.nextInt();
+		}
+		return option;
+	}
+
+	public static int sumar(int a, int b) {
+		return (a + b);
+	}
+
+	public static int restar(int a, int b) {
+		return (a - b);
+	}
+
+	public static int multiplicar(int a, int b) {
+		return (a * b);
+	}
+
+	public static int dividir(int a, int b) {
+		return (a / b);
+	}
+
+	public static boolean primo(int p) {
+		boolean flag = true;
+		if (p % 2 == 0)
+			flag = false;
+		for (int i = 3; i < (int) Math.sqrt(p); i += 2) {
+			if (p % i == 0)
+				flag = false;
+		}
+		return flag;
+	}
+
+	public static void ejercicio8func() {
+		int option;
+		do {
+			option = menu();
+			switch (option) {
+				case 1:
+					System.out.println("Introduzca el primer número");
+					int a = sc.nextInt();
+					System.out.println("Introduzca el segundo número");
+					int b = sc.nextInt();
+					System.out.println("El resultado es " + sumar(a, b));
+
+					break;
+				case 2:
+					System.out.println("Introduzca el primer número");
+					int c = sc.nextInt();
+					System.out.println("Introduzca el segundo número");
+					int d = sc.nextInt();
+					System.out.println("El resultado es " + restar(c, d));
+					break;
+				case 3:
+					System.out.println("Introduzca el primer número");
+					int e = sc.nextInt();
+					System.out.println("Introduzca el segundo número");
+					int f = sc.nextInt();
+					System.out.println("El resultado es " + multiplicar(e, f));
+					break;
+				case 4:
+					System.out.println("Introduzca el primer número");
+					int g = sc.nextInt();
+					System.out.println("Introduzca el segundo número");
+					int h = sc.nextInt();
+					if (h != 0)
+						System.out.println("El resultado es " + dividir(g, h));
+					else
+						System.out.println("No se puede dividir por 0");
+					break;
+				case 5:
+					System.out.println("Introduzca el primer número");
+					int p = sc.nextInt();
+					boolean flag = primo(p);
+					if (flag)
+						System.out.println("El número es primo");
+					else
+						System.out.println("El número no es primo");
+					break;
+				case 6:
+					System.out.println("Adiós. Hasta la próxima");
+					break;
+				default:
+					break;
+			}
+		} while (option != 6);
+	}
+
 	public static void main(String[] args) throws Exception {
 		// ejercicio1();
 		// ejercicio2();
@@ -344,6 +442,7 @@ public class Actividad6 {
 		// ejercicio10();
 		// ejercicio11();
 		// ejercicio12();
-		ejercicio13();
+		// ejercicio13();
+		ejercicio8func();
 	}
 }
